@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nathan's Portfolio</title>
+    <link rel="icon" type="image" href="NameLogo_NoBG.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/1c6e1d8f57.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="home-page">
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <!-- Resume Link (Left Side) -->
+    <div class="fixed-left-link">
+      <a href="NBR.pdf" target="_blank">My Resume</a>
+      <div class="vertical-line"></div>
+    </div>
+
+    <!-- Social Icons (Right Side) -->
+    <div class="fixed-right-icons">
+      <div class="social-icons">
+        <a href="https://github.com/nathanbrown9" target="_blank">
+          <img src="github.png" alt="GitHub" />
+        </a>
+        <a
+          href="https://linkedin.com/in/nathan-brown-745989238"
+          target="_blank"
+        >
+          <img src="linkedin.png" alt="LinkedIn" />
+        </a>
+      </div>
+      <div class="vertical-line"></div>
+    </div>
+
+    <section class="header" id="top">
+      <div class="hometext">
+        <nav>
+          <div class="navbar-image">
+            <a href="index.html"><img src="NameLogo.png" /></a>
+          </div>
+          <div class="nav-animation-wrapper" id="navWrapper">
+            <div class="nav-color-overlay primary-overlay"></div>
+            <div class="nav-color-overlay secondary-overlay"></div>
+            <div class="nav-links" id="navLinks">
+              <i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
+              <ul>
+                <li><a href="#experience-section">Experience</a></li>
+                <li><a href="#projects-section">Projects</a></li>
+                <li><a href="#" id="openContactPopup">Contact</a></li>
+              </ul>
+
+              <div class="mobile-social-icons">
+                <a href="https://github.com/nathanbrown9" target="_blank">
+                  <img src="mobile-githublogo.png" alt="GitHub" />
+                </a>
+                <a
+                  href="https://linkedin.com/in/nathan-brown-745989238"
+                  target="_blank"
+                >
+                  <img src="mobile-linkedin.png" alt="LinkedIn" />
+                </a>
+              </div>
+              <div class="mobile-resume-link">
+                <a href="NBR.pdf" target="_blank">My Resume</a>
+              </div>
+            </div>
+          </div>
+
+          <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+        </nav>
+      </div>
+
+      <div class="content-container">
+        <div class="text-box">
+          <h1>Nathan Brown</h1>
+          <h5>Software Developer</h5>
+          <button class="home-button">
+            <span class="btn-content">
+              About Me
+              <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="popup-overlay" id="popup-overlay"></div>
+      <section class="popup-form" id="about-popup">
+        <button class="close-popup" id="close-popup">&times;</button>
+        <div class="popup-left">
+          <h1>About Me</h1>
+          <h5>Software Developer</h5>
+          <p>
+            I'm
+            <span style="color: var(--clr-primary)"><b>Nathan Brown,</b></span>
+            a 23-year-old Atlanta-based
+            <span style="color: var(--clr-primary)"
+              ><b>Computer Science grad</b></span
+            >
+            who’s obsessed with turning code into creative, functional things. I
+            love solving real-world problems with
+            <span style="color: var(--clr-primary)"
+              ><b>clean design, smart UI,</b></span
+            >
+            and
+            <span style="color: var(--clr-primary)"
+              ><b>powerful backend logic,</b></span
+            >
+            especially when it involves sports or anything data-driven.
+          </p>
+          <p>
+            When I’m not building web apps or debugging Salesforce code, I’m
+            either diving into NBA stat models, learning a new instrument, or
+            sketching out my next big project idea.
+            <span style="color: var(--clr-primary)"
+              ><b>Always building. Always learning.</b></span
+            >
+            Actually
+            <span style="color: var(--clr-primary)"><b>for hire</b></span
+            >.
+          </p>
+        </div>
+        <div class="popup-right">
+          <h2>Inquiries?</h2>
+          <h4>
+            New Projects, Freelance Work, Jobs, Just Saying Hello? Let's Talk.
+          </h4>
+          <form id="form" action="#" method="POST">
+            <div class="right-formstyle">
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="input-wrapper">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="input-wrapper">
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Your Message"
+                  rows="2"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="send-button" id="send-btn" disabled>
+                <span class="btn-content">
+                  Send Message
+                  <span class="arrow"><i class="fas fa-paper-plane"></i></span>
+                </span>
+              </button>
+            </div>
+
+            <input type="hidden" name="_captcha" value="false" />
+          </form>
+        </div>
+      </section>
+    </section>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "LF-lTtBIm2Wt2r_1s",
+        });
+      })();
+    </script>
+    <script src="web.js"></script>
+
+    <!--------------- My Experince Section-------------------->
+    <section class="experience-section" id="experience-section">
+      <h2 id="experienceTitle" class="section-title">
+        <span id="experienceText">Experience</span
+        ><span class="glow-period">.</span>
+      </h2>
+      <div class="experience-timeline">
+        <div
+          class="experience-card"
+          style="background-image: url('softwaredev.jpg')"
+        >
+          <div class="hover-badge">01</div>
+          <div class="experience-content">
+            <div class="experience-header">
+              <h3>Salesforce Developer Intern</h3>
+              <h5>ZRef Consulting Services, Inc. (2024 - Present)</h5>
+            </div>
+            <ul class="experience-details">
+              <li>
+                Developed and scaled AgentForce, increasing efficiency by 35%
+                using LWC and Apex.
+              </li>
+              <li>
+                Reduced debugging time by 50% by tracing LWC to Apex for backend
+                resolution.
+              </li>
+              <li>
+                Integrated RESTful APIs to enhance external platform
+                communication.
+              </li>
+              <li>
+                Implemented Salesforce best practices in a collaborative team
+                setting.
+              </li>
+              <li>
+                Used Scrum cycles with daily stand-ups and retrospectives for
+                delivery efficiency.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Repeat this for other jobs -->
+
+        <div
+          class="experience-card"
+          style="background-image: url('claimsadj.jpg')"
+        >
+          <div class="hover-badge">02</div>
+          <div class="experience-content">
+            <div class="experience-header">
+              <h3>Claims Adjuster</h3>
+              <h5>Aspire Roofing & Construction (2019 - Current)</h5>
+            </div>
+            <ul class="experience-details">
+              <li>
+                Utilized Xactimate to generate precise damage estimates,
+                ensuring accurate budgeting and optimal resource allocation.
+              </li>
+              <li>
+                Communicated with homeowners, insurance adjusters, and
+                contractors to assess claims, explain damage reports, and
+                negotiate settlements, improving customer satisfaction and claim
+                resolution efficiency.
+              </li>
+              <li>
+                Provided on-site inspections and detailed reports to support
+                fair and transparent claim evaluations.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="experience-card"
+          style="background-image: url('cstutor.jpg')"
+        >
+          <div class="hover-badge">03</div>
+          <div class="experience-content">
+            <div class="experience-header">
+              <h3>Computer Science Tutor</h3>
+              <h5>The Coder School (2023 - 2024)</h5>
+            </div>
+            <ul class="experience-details">
+              <li>
+                Taught fundamental and advanced programming concepts to students
+                aged 7 to 16, fostering problem-solving skills.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="experience-card"
+          style="background-image: url('cityofatl.jpg')"
+        >
+          <div class="hover-badge">04</div>
+          <div class="experience-content">
+            <div class="experience-header">
+              <h3>Computer Science Intern</h3>
+              <h5>City of Atlanta, Department of Aviation (2022)</h5>
+            </div>
+            <ul class="experience-details">
+              <li>
+                Contributed to project meetings for Hartsfield-Jackson Airport,
+                providing valuable insights and recommendations for enhancing
+                airport security, efficiency, and morale.
+              </li>
+              <li>
+                Implemented software updates aimed at fortifying security
+                measures throughout the airport, ensuring compliance with
+                industry standards and regulations.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-------------- Project Section ------------------>
+    <section class="projects-section" id="projects-section">
+      <div class="projects-wrapper">
+        <h2 id="typewriterProjectsTitle" class="section-title">
+          <span id="typewriterProjectsText">Projects</span
+          ><span class="glow-period">.</span>
+        </h2>
+
+        <div class="project">
+          <div class="project-screenshot">
+            <img src="Taskify.png" alt="Project Screenshot" />
+          </div>
+
+          <div class="project-info">
+            <div class="project-text">
+              <h4 class="project-subtitle">Featured Project</h4>
+              <h3 class="project-title">Taskify</h3>
+
+              <div class="project-description-box">
+                <p>
+                  Taskify is a responsive, feature rich to-do list web
+                  application designed to help users stay organized, productive,
+                  and connected. With a focus on collaboration, reminders, and
+                  personalization, Taskify streamlines the task management
+                  experience from start to finish.
+                </p>
+              </div>
+
+              <div class="project-stack">
+                HTML • CSS • JavaScript • PHP • MySQL
+              </div>
+
+              <div class="project-links">
+                <a
+                  href="https://github.com/nathanbrown9/To-do-List"
+                  target="_blank"
+                >
+                  <img src="github.png" alt="GitHub" />
+                </a>
+                <a
+                  href="https://nathanbrown9.github.io/To-do-List/login_screen.html"
+                  target="_blank"
+                  class="share-btn"
+                  >Live</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project reverse">
+          <div class="project-screenshot">
+            <img src="aspire.png" alt="Aspire Roofing Screenshot" />
+          </div>
+
+          <div class="project-info">
+            <div class="project-text">
+              <h4 class="project-subtitle">Featured Project</h4>
+              <h3 class="project-title">Aspire Roofing</h3>
+
+              <div class="project-description-box">
+                <p>
+                  Aspire Roofing & Construction is a sleek and responsive
+                  website built for a professional roofing company. It includes
+                  a custom cost estimation quiz, dynamic project gallery, and a
+                  seamless contact experience to help generate leads.
+                </p>
+              </div>
+
+              <div class="project-stack">HTML • CSS • JavaScript</div>
+
+              <div class="project-links">
+                <a
+                  href="https://nathanbrown9.github.io/aspire-roofing/"
+                  target="_blank"
+                  class="share-btn"
+                  >Live</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="thecollection">
+        <h3 class="notable-title">
+          Other Notable Projects<span class="glow-period">.</span>
+        </h3>
+
+        <div class="notable-projects">
+          <!-- Notable Project 1 -->
+          <a
+            href="https://github.com/nathanbrown9/FlowInternetRadio"
+            target="_blank"
+            class="notable-card"
+          >
+            <i class="fa-regular fa-folder"></i>
+            <h4 class="card-title">Flow Internet Radio</h4>
+            <p class="card-description">
+              A mobile-first progressive web app with a touch-optimized
+              interface and live radio streaming.
+            </p>
+            <div class="card-tech">HTML • CSS • JavaScript</div>
+          </a>
+
+          <!-- Notable Project 2 -->
+          <a
+            href="https://github.com/nathanbrown9/Anime_Rec_System"
+            target="_blank"
+            class="notable-card"
+          >
+            <i class="fa-regular fa-folder"></i>
+            <h4 class="card-title">Anime Rec System</h4>
+            <p class="card-description">
+              A recommendation engine for anime based on user preferences and
+              viewing history.
+            </p>
+            <div class="card-tech">Python • Flask • Pandas</div>
+          </a>
+
+          <!-- Notable Project 3 -->
+          <a
+            href="https://github.com/nathanbrown9/NBA-Line-Prediction"
+            target="_blank"
+            class="notable-card"
+          >
+            <i class="fa-regular fa-folder"></i>
+            <h4 class="card-title">NBA Line Prediction</h4>
+            <p class="card-description">
+              A data-driven prediction engine that forecasts future NBA player
+              stat lines by analyzing historical performance metrics, matchup
+              data, and advanced statistical trends.
+            </p>
+            <div class="card-tech">Python • Pandas • NBA API</div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-logo-wrapper" id="scrollToTop">
+        <img src="NameLogo_NoBG.png" alt="Logo" class="footer-logo" />
+        <span class="slide-text">Top</span>
+      </div>
+      <p class="footer-credit">Designed & Built by Nathan Brown</p>
+    </footer>
+  </body>
+</html>
